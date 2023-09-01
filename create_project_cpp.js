@@ -22,6 +22,8 @@ program
     fs.mkdirSync(path.join(projectDir, 'obj'));
     fs.mkdirSync(path.join(projectDir, 'src'));
 
+		fs.copyFileSync('assets/Makefile', path.join(projectDir, 'Makefile'));
+
     console.log(`Created project '${projectName}' in C++.`);
   });
 
