@@ -20,9 +20,13 @@ program
     fs.mkdirSync(path.join(projectDir, 'inc'));
     fs.mkdirSync(path.join(projectDir, 'lib'));
     fs.mkdirSync(path.join(projectDir, 'obj'));
-    fs.mkdirSync(path.join(projectDir, 'src'));
+    // fs.mkdirSync(path.join(projectDir, 'src'));
 
-		fs.copyFileSync('assets/Makefile', path.join(projectDir, 'Makefile'));
+    // Specify the path to the assets directory
+    const assetsDir = path.join(__dirname, 'assets');
+
+    // Copy the Makefile from assets to the project directory
+    fs.copyFileSync(path.join(assetsDir, 'Makefile'), path.join(projectDir, 'Makefile'));
 
     console.log(`Created project '${projectName}' in C++.`);
   });
